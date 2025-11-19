@@ -220,7 +220,7 @@ SELECT
     cte_2.not_churned_count as current_users,
     cte_1.churned_count as former_users,
 -- I decided to use ratios of current to former users instead of calculating differences 
--- because one age group has significantly fewer users than the others in this dataset.
+-- because one cultural group has significantly more users than the others in this dataset.
 -- I had to apply the CAST function due to situation-specific constraints
 -- of the division operation and the ROUND function.
     ROUND((cte_2.not_churned_count::float / cte_1.churned_count)::numeric, 2) AS current_to_former_ratio
